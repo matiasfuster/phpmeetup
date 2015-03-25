@@ -1,0 +1,26 @@
+{
+    "name": "matiasfuster/phpmeetup",
+    "description": "Demo project to showcase Rocketeer Deploying",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "PHPMeetup",
+        "Uruguay",
+        "Deploy",
+        "Rocketeer",
+        "Capistrano"
+    ],
+    "homepage": "http://phpmvd.uy/",
+    "require": {
+        "php": ">=5.3.3",
+        "smarty/smarty": "3.1.16"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "squizlabs/php_codesniffer": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "PHPMeetup": "src/"
+        }
+    }
+}
