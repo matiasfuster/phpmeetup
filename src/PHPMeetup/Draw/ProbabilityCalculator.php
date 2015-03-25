@@ -16,7 +16,7 @@ class ProbabilityCalculator
     }
     public function getAttendants()
     {
-        return $this->attendants-3;
+        return $this->attendants;
     }
 
     public function setPrizes($prizes = 1)
@@ -39,7 +39,7 @@ class ProbabilityCalculator
     }
     
     public function getElegibles() {
-        return $this->attendants;
+        return $this->attendants-3;
     }
     
     public function calculate()
