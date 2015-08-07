@@ -4,7 +4,7 @@ include __DIR__ . "/../vendor/autoload.php";
 use PHPMeetup\Draw\ProbabilityCalculator;
 use PHPMeetup\Exception\ExceptionInterface as PHPMeetupException;
 
-$version = '0.1.3';
+$version = '0.1.4';
 
 $smarty = new \Smarty;
 
