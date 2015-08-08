@@ -1,5 +1,6 @@
 <?php
 include __DIR__ . "/../vendor/autoload.php";
+include __DIR__ . "config.php";
 
 use PHPMeetup\Draw\ProbabilityCalculator;
 use PHPMeetup\Exception\ExceptionInterface as PHPMeetupException;
@@ -13,9 +14,6 @@ $smarty->compile_dir = __DIR__ . '/templates_c';
 $smarty->cache_dir = __DIR__ . '/cache';
 $smarty->config_dir = __DIR__ . '/configs';
 
-$prizes = 8;
-$attendants = 200;
-
 try {
     $probabilityCalculator = new ProbabilityCalculator($prizes, $attendants);
     $probability = $probabilityCalculator->calculate();
@@ -28,9 +26,9 @@ catch(PHPMeetupException $e) {
 }
 
 $draw = array(
-    'prizes' => $prizes,
-    'attendants' => $attendants,
-    'elegible' => $elegible,
+    'prizes' => $probabilityCalculator->getPrizes(),
+    'attendants' => $probabilityCalculator->getAttendants(),
+    'elegible' => $probabilityCalculator->getElegibles(),
     'probability' => ($probability*100)
 );
 
