@@ -11,8 +11,20 @@ class ProbabilityCalculatorTest extends PHPUnit_Framework_TestCase
     public function testSetAttendants()
     {
         $probabilityCalculator = new ProbabilityCalculator();
-        $probabilityCalculator->setAttendants(3);
-        $this->assertEquals(3, $probabilityCalculator->getAttendants());
+        $probabilityCalculator->setAttendants(30);
+        
+        $reflected = new \ReflectionClass($probabilityCalculator);
+        $attendants = $reflected->getProperty('attendants');
+        $attendants->setAccessible(true);
+        
+        $this->assertEquals(30, $attendants->getValue($probabilityCalculator));
+    }
+    
+    public function testGetAttendants()
+    {
+        $probabilityCalculator = new ProbabilityCalculator();
+        $probabilityCalculator->setAttendants(30);        
+        $this->assertEquals(30, $probabilityCalculator->getAttendants());
     }
     
     /**
@@ -26,9 +38,9 @@ class ProbabilityCalculatorTest extends PHPUnit_Framework_TestCase
     
     public function testCalculate()
     {
-        $prizes = 1;
-        $attendants = 8;
-        $probabilityCalculator = new ProbabilityCalculator(1, 8);
+        $prizes = 15;
+        $attendants = 60;
+        $probabilityCalculator = new ProbabilityCalculator($prizes, $attendants);
         $elegible = $probabilityCalculator->getElegibles();
         $probability = ($prizes / $elegible);
         $this->assertEquals($probability, $probabilityCalculator->calculate());
@@ -42,4 +54,5 @@ class ProbabilityCalculatorTest extends PHPUnit_Framework_TestCase
         $probabilityCalculator = new ProbabilityCalculator(2, 0);
         $probabilityCalculator->calculate();
     }
+    
 }
