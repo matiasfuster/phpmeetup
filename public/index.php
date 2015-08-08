@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . "/../vendor/autoload.php";
-include __DIR__ . "config.php";
+include __DIR__ . "/config.php";
 
 use PHPMeetup\Draw\ProbabilityCalculator;
 use PHPMeetup\Exception\ExceptionInterface as PHPMeetupException;
