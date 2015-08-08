@@ -9,6 +9,7 @@ class ProbabilityCalculator
 {
     private $prizes;
     private $attendants;
+    const ORGANIZERS = 30;
 
     public function getPrizes()
     {
@@ -39,7 +40,7 @@ class ProbabilityCalculator
     }
     
     public function getElegibles() {
-        return $this->attendants-3;
+        return $this->attendants;
     }
     
     public function calculate()
