@@ -5,7 +5,7 @@ include __DIR__ . "/config.php";
 use PHPMeetup\Draw\ProbabilityCalculator;
 use PHPMeetup\Exception\ExceptionInterface as PHPMeetupException;
 
-$version = '0.1.4';
+$version = '0.1.5';
 
 $smarty = new \Smarty;
 
