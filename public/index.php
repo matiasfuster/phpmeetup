@@ -13,8 +13,8 @@ $smarty->compile_dir = __DIR__ . '/templates_c';
 $smarty->cache_dir = __DIR__ . '/cache';
 $smarty->config_dir = __DIR__ . '/configs';
 
-$prizes = 1;
-$attendants = 10;
+$prizes = 8;
+$attendants = 200;
 
 try {
     $probabilityCalculator = new ProbabilityCalculator($prizes, $attendants);
